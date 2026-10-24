@@ -72,6 +72,7 @@ window.RECETTES = [
       "Sel, poivre",
       "Version tomate : 1 à 2 c. à soupe de concentré de tomate",
       "Ou version carotte et champignons : 1 ou 2 carottes, quelques champignons et 1 gousse d'ail",
+      "Facultatif, pour la décoration : quelques tomates séchées",
     ],
     etapes: [
       "Préchauffer le four à 180 °C. Étaler la pâte dans un moule à tarte.",
@@ -80,6 +81,7 @@ window.RECETTES = [
       "Version carotte et champignons : faire cuire les carottes (voir la page Carotte pour les temps) et les écraser ; couper les champignons en petits morceaux et les faire revenir à la poêle avec l'ail. Mélanger les carottes écrasées dans la ricotta, puis ajouter les champignons (en morceaux, pas écrasés).",
       "Étaler l'appareil sur la pâte.",
       "Trancher finement les courgettes et les disposer par-dessus.",
+      "Facultatif : couper des tomates séchées en morceaux et les répartir sur le dessus pour décorer.",
       "Enfourner 45 minutes à 180 °C, puis il n'y a plus qu'à se régaler.",
     ],
     notes:
