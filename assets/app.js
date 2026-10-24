@@ -10,7 +10,7 @@
   const duree = (t) => (t.min === t.max ? `${t.min} min` : `${t.min}–${t.max} min`);
 
   // ---------- Pages ----------
-  function accueil() {
+  function accueil(params) {
     app.innerHTML = `
       <input class="search" id="q" type="search" placeholder="Chercher un légume ou une recette…" autocomplete="off">
       <h2>Temps de cuisson par légume</h2>
@@ -18,6 +18,7 @@
       <h2>Recettes</h2>
       <div class="list" id="recettes"></div>`;
     const q = document.getElementById("q");
+    q.value = params.get("q") || "";
     const draw = () => {
       const f = norm(q.value.trim());
       const ls = LEGUMES.filter((l) => norm(l.nom).includes(f));
@@ -29,7 +30,11 @@
         rs.map(carteRecette).join("") ||
         `<p class="muted">${RECETTES.length ? "Aucune recette trouvée." : "Pas encore de recette."}</p>`;
     };
-    q.addEventListener("input", draw);
+    q.addEventListener("input", () => {
+      draw();
+      const v = q.value.trim();
+      remplacerUrl(v ? `#/?q=${encodeURIComponent(v)}` : "#/");
+    });
     draw();
   }
 
@@ -76,7 +81,7 @@
     );
   }
 
-  function pageRecette(id) {
+  function pageRecette(id, extra) {
     const r = RECETTES.find((x) => x.id === id);
     if (!r) return introuvable();
     const infos = [r.personnes && `${r.personnes} pers.`, r.preparation && `prép. ${r.preparation} min`, r.cuisson && `cuisson ${r.cuisson} min`].filter(Boolean).join(" · ");
@@ -90,7 +95,11 @@
       <h2>Étapes</h2>
       <ol>${(r.etapes || []).map((e) => `<li>${esc(e)}</li>`).join("")}</ol>
       ${r.notes ? `<h2>Notes</h2><p>${esc(r.notes)}</p>` : ""}`;
-    document.getElementById("partager").addEventListener("click", () => ouvrirPartage(r));
+    document.getElementById("partager").addEventListener("click", () => {
+      qrOuvertIci = true;
+      aller(`#/recette/${encodeURIComponent(r.id)}/qr`);
+    });
+    if (extra === "qr") ouvrirPartage(r);
   }
 
   // ---------- Partage (QR code) ----------
@@ -116,6 +125,12 @@
         <button type="button" data-act="fermer" class="principal">Fermer</button>
       </div>`;
     dlg.querySelector('[data-act="fermer"]').addEventListener("click", () => dlg.close());
+    dlg.onclose = () => {
+      // Fermeture par le bouton ou Échap : on revient à la recette dans l'historique.
+      if (!/\/qr$/.test(chemin(courant))) return;
+      if (qrOuvertIci) { qrOuvertIci = false; history.back(); }
+      else aller(`#/recette/${encodeURIComponent(r.id)}`, true);
+    };
     dlg.querySelector('[data-act="copier"]').addEventListener("click", async (ev) => {
       const b = ev.currentTarget;
       try { await navigator.clipboard.writeText(url); b.textContent = "Lien copié ✓"; }
@@ -124,7 +139,7 @@
     });
     const p = dlg.querySelector('[data-act="partager"]');
     if (p) p.addEventListener("click", () => navigator.share({ title: r.titre, url }).catch(() => {}));
-    dlg.showModal();
+    if (!dlg.open) dlg.showModal();
   }
 
   function introuvable() {
@@ -134,23 +149,40 @@
   // ---------- Routage ----------
   // La page courante est gardée en mémoire : la navigation marche même là où
   // l'adresse ne peut pas changer (aperçu intégré, cadre protégé).
+  // Tout l'état de la vue est dans l'adresse :
+  //   #/?q=tomate                  recherche sur l'accueil
+  //   #/legume/carotte/vapeur      légume + mode de cuisson
+  //   #/recette/houmous-maison/qr  recette avec la fenêtre QR code ouverte
   let courant = "#/";
+  let qrOuvertIci = false; // QR ouvert par le bouton (et non par un lien partagé)
   try { courant = location.hash || "#/"; } catch (e) {}
 
-  function afficher(chemin) {
-    courant = chemin || "#/";
-    const [, type, id, extra] = courant.split("/");
+  const chemin = (h) => h.split("?")[0];
+  const page = (h) => chemin(h).split("/").slice(0, 3).join("/");
+
+  function afficher(h) {
+    courant = h || "#/";
+    const dlg = document.getElementById("partage");
+    if (dlg && dlg.open && !/\/qr$/.test(chemin(courant))) dlg.close();
+    const [, type, id, extra] = chemin(courant).split("/");
+    const params = new URLSearchParams(courant.split("?")[1] || "");
     if (type === "legume") pageLegume(decodeURIComponent(id || ""), extra);
-    else if (type === "recette") pageRecette(decodeURIComponent(id || ""));
-    else accueil();
+    else if (type === "recette") pageRecette(decodeURIComponent(id || ""), extra);
+    else accueil(params);
   }
 
-  function aller(chemin, remplacer) {
-    const memePage = chemin.split("/").slice(0, 3).join("/") === courant.split("/").slice(0, 3).join("/");
-    afficher(chemin);
+  // Met à jour l'adresse sans redessiner (ex. frappe dans la recherche).
+  function remplacerUrl(h) {
+    courant = h;
+    try { history.replaceState(null, "", h); } catch (e) {}
+  }
+
+  function aller(h, remplacer) {
+    const memePage = page(h) === page(courant);
+    afficher(h);
     try {
-      if (remplacer) history.replaceState(null, "", chemin);
-      else history.pushState(null, "", chemin);
+      if (remplacer) history.replaceState(null, "", h);
+      else history.pushState(null, "", h);
     } catch (e) {}
     if (!memePage) window.scrollTo(0, 0);
   }
@@ -163,6 +195,7 @@
     aller(a.getAttribute("href"));
   });
   window.addEventListener("popstate", () => {
+    qrOuvertIci = false;
     try { afficher(location.hash || "#/"); } catch (e) {}
   });
   afficher(courant);

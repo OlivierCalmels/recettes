@@ -25,3 +25,12 @@ légumes listés dans son champ `legumes`.
 3. Le site est en ligne quelques minutes plus tard sur `https://<pseudo>.github.io/<dépôt>/`.
 
 Le site fonctionne aussi en ouvrant simplement `index.html` dans un navigateur.
+
+## Adresses partageables
+
+Tout l'état de la vue est dans l'adresse, donc le bouton retour et les liens partagés
+redonnent exactement la même vue :
+
+- `#/?q=tarte` : accueil avec la recherche remplie
+- `#/legume/carotte/vapeur` : un légume avec le mode de cuisson choisi
+- `#/recette/houmous-maison/qr` : une recette avec la fenêtre QR code ouverte
