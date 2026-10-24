@@ -68,7 +68,7 @@ window.RECETTES = [
     ingredients: [
       "1 pâte feuilletée ou brisée, selon ce qu'on a",
       "250 g de ricotta",
-      "1 à 2 courgettes",
+      "2 courgettes",
       "Sel, poivre",
       "Version tomate : 1 à 2 c. à soupe de concentré de tomate",
       "Ou version carotte et champignons : 1 ou 2 carottes, quelques champignons et 1 gousse d'ail",
