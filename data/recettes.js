@@ -58,4 +58,32 @@ window.RECETTES = [
     notes:
       "C'est déjà très bon nature ; la sauce pimentée et les cornichons sont des options pour varier.",
   },
+  {
+    id: "tarte-ricotta-courgette",
+    titre: "Tarte salée ricotta courgette",
+    legumes: ["courgette", "carotte"],
+    personnes: 4,
+    preparation: 20,
+    cuisson: 45,
+    ingredients: [
+      "1 pâte feuilletée ou brisée, selon ce qu'on a",
+      "250 g de ricotta",
+      "1 à 2 courgettes",
+      "Sel, poivre",
+      "Facultatif : 1 à 2 c. à soupe de concentré de tomate (ou une autre alternative, comme du pesto)",
+      "Facultatif : quelques champignons et 1 gousse d'ail",
+      "Facultatif : 1 ou 2 carottes",
+    ],
+    etapes: [
+      "Préchauffer le four à 180 °C. Étaler la pâte dans un moule à tarte.",
+      "Facultatif : faire cuire les carottes (voir la page Carotte pour les temps), puis les écraser.",
+      "Facultatif : couper finement les champignons et les faire revenir à la poêle avec l'ail.",
+      "Préparer l'appareil : assaisonner la ricotta, puis y mélanger, selon les envies, le concentré de tomate, les carottes écrasées et les champignons (coupés fins, pas écrasés).",
+      "Étaler l'appareil sur la pâte.",
+      "Trancher finement les courgettes et les disposer par-dessus.",
+      "Enfourner 45 minutes à 180 °C, puis il n'y a plus qu'à se régaler.",
+    ],
+    notes:
+      "La base, c'est juste la pâte, la ricotta et les courgettes. Le concentré de tomate, les carottes écrasées et les champignons à l'ail sont des options pour l'enrichir.",
+  },
 ];
