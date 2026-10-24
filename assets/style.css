@@ -94,3 +94,29 @@ ol li, ul.plain li { margin-bottom: .35rem; }
 .minuteur strong { font-size: 1.4rem; font-variant-numeric: tabular-nums; }
 .minuteur button { border: 0; border-radius: 10px; padding: .45rem .7rem; cursor: pointer; }
 .minuteur.fini { background: var(--accent); color: #fff; }
+
+.partager {
+  margin-top: .5rem;
+  border: 1px solid var(--line); background: var(--card); color: var(--text);
+  border-radius: 10px; padding: .45rem .8rem; font-size: .9rem; cursor: pointer;
+}
+.partager:hover { border-color: var(--accent); }
+
+.partage {
+  width: calc(100% - 2rem); max-width: 380px;
+  border: 0; border-radius: 18px; padding: 1.25rem;
+  background: var(--card); color: var(--text); text-align: center;
+  box-shadow: 0 10px 40px rgba(0,0,0,.3);
+}
+.partage::backdrop { background: rgba(0,0,0,.45); }
+.partage h2 { margin-top: 0; }
+.partage .qr { background: #fff; border-radius: 12px; padding: .5rem; margin: .75rem auto; max-width: 280px; }
+.partage .qr svg { display: block; width: 100%; height: auto; }
+.partage .lien { font-size: .8rem; color: var(--muted); word-break: break-all; }
+.partage .avert { font-size: .85rem; background: var(--accent-soft); border-radius: 10px; padding: .5rem .7rem; }
+.partage .actions { display: flex; gap: .5rem; justify-content: center; flex-wrap: wrap; margin-top: .75rem; }
+.partage .actions button {
+  border: 1px solid var(--line); background: var(--bg); color: var(--text);
+  border-radius: 10px; padding: .5rem .8rem; font-size: .9rem; cursor: pointer;
+}
+.partage .actions .principal { background: var(--accent); border-color: var(--accent); color: #fff; }

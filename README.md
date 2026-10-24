@@ -9,7 +9,8 @@ et recettes personnelles.
 - `index.html` : la page unique du site
 - `data/legumes.js` : les légumes et leurs temps de cuisson
 - `data/recettes.js` : les recettes
-- `assets/` : style et logique (recherche, pages, minuteur)
+- `assets/` : style et logique (recherche, pages, minuteur, QR code de partage)
+- `assets/qrcode.js` : générateur de QR code (Kazuhiko Arase, licence MIT), sans dépendance externe
 
 ## Ajouter un légume ou une recette
 

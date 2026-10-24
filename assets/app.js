@@ -84,11 +84,47 @@
       <a class="back" href="#/">← Accueil</a>
       <h1>${esc(r.titre)}</h1>
       <p class="muted">${esc(infos)}</p>
+      <button class="partager" type="button" id="partager">▦ QR code / partager</button>
       <h2>Ingrédients</h2>
       <ul class="plain">${(r.ingredients || []).map((i) => `<li>${esc(i)}</li>`).join("")}</ul>
       <h2>Étapes</h2>
       <ol>${(r.etapes || []).map((e) => `<li>${esc(e)}</li>`).join("")}</ol>
       ${r.notes ? `<h2>Notes</h2><p>${esc(r.notes)}</p>` : ""}`;
+    document.getElementById("partager").addEventListener("click", () => ouvrirPartage(r));
+  }
+
+  // ---------- Partage (QR code) ----------
+  function lienRecette(r) {
+    let base = "";
+    try { base = location.href.split("#")[0]; } catch (e) {}
+    return `${base}#/recette/${encodeURIComponent(r.id)}`;
+  }
+
+  function ouvrirPartage(r) {
+    const url = lienRecette(r);
+    const local = /^file:/i.test(url);
+    const dlg = document.getElementById("partage");
+    dlg.innerHTML = `
+      <h2>${esc(r.titre)}</h2>
+      <p class="muted">Scanne ce QR code avec l'appareil photo d'un téléphone pour ouvrir la recette.</p>
+      <div class="qr">${window.qrSvg ? window.qrSvg(url) : ""}</div>
+      ${local ? `<p class="avert">Ce site est ouvert depuis un fichier local : le QR code ne fonctionnera que sur la version en ligne.</p>` : ""}
+      <p class="lien">${esc(url)}</p>
+      <div class="actions">
+        <button type="button" data-act="copier">Copier le lien</button>
+        ${navigator.share ? `<button type="button" data-act="partager">Partager…</button>` : ""}
+        <button type="button" data-act="fermer" class="principal">Fermer</button>
+      </div>`;
+    dlg.querySelector('[data-act="fermer"]').addEventListener("click", () => dlg.close());
+    dlg.querySelector('[data-act="copier"]').addEventListener("click", async (ev) => {
+      const b = ev.currentTarget;
+      try { await navigator.clipboard.writeText(url); b.textContent = "Lien copié ✓"; }
+      catch (e) { b.textContent = "Copie impossible"; }
+      setTimeout(() => { b.textContent = "Copier le lien"; }, 2000);
+    });
+    const p = dlg.querySelector('[data-act="partager"]');
+    if (p) p.addEventListener("click", () => navigator.share({ title: r.titre, url }).catch(() => {}));
+    dlg.showModal();
   }
 
   function introuvable() {
