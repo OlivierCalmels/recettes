@@ -8,7 +8,8 @@
 //   cuisson: 25,                     // minutes
 //   ingredients: ["600 g de carottes", "30 g de beurre"],
 //   etapes: ["Éplucher les carottes…", "…"],
-//   notes: "Facultatif"
+//   notes: "Facultatif",
+//   photo: "images/mon-plat.jpg"   // facultatif, photo dans le dossier images/
 // }
 window.RECETTES = [
   {
@@ -61,6 +62,7 @@ window.RECETTES = [
   {
     id: "tarte-ricotta-courgette",
     titre: "Tarte salée ricotta courgette",
+    photo: "images/tarte-aux-courgettes.jpg",
     legumes: ["courgette", "carotte"],
     personnes: 4,
     preparation: 20,

@@ -40,7 +40,8 @@
 
   function carteRecette(r) {
     const t = [r.preparation && `prép. ${r.preparation} min`, r.cuisson && `cuisson ${r.cuisson} min`].filter(Boolean).join(" · ");
-    return `<a class="card" href="#/recette/${r.id}"><strong>${esc(r.titre)}</strong><span class="muted">${esc(t)}</span></a>`;
+    const img = r.photo ? `<img class="vignette" src="${esc(r.photo)}" alt="" loading="lazy">` : "";
+    return `<a class="card${r.photo ? " avec-photo" : ""}" href="#/recette/${r.id}">${img}<span><strong>${esc(r.titre)}</strong><span class="muted">${esc(t)}</span></span></a>`;
   }
 
   function pageLegume(id, modeChoisi) {
@@ -89,6 +90,7 @@
       <a class="back" href="#/">← Accueil</a>
       <h1>${esc(r.titre)}</h1>
       <p class="muted">${esc(infos)}</p>
+      ${r.photo ? `<img class="photo" src="${esc(r.photo)}" alt="${esc(r.titre)}">` : ""}
       <button class="partager" type="button" id="partager">▦ QR code / partager</button>
       <h2>Ingrédients</h2>
       <ul class="plain">${(r.ingredients || []).map((i) => `<li>${esc(i)}</li>`).join("")}</ul>
