@@ -113,4 +113,36 @@ window.RECETTES = [
     notes:
       "Si les premières restent molles une fois refroidies, laisser les suivantes une minute de plus. Plus l'huile est chaude, plus elles brunissent vite sans croustiller ; plus elle est froide, plus elles boivent l'huile. Des tranches plus fines (1 à 1,5 mm) cuisent plus vite et donnent des chips plus légères.",
   },
+  {
+    id: "jarret-demi-sel-chou-poireaux-cocotte",
+    titre: "Jarret de porc demi-sel, chou et poireaux à la cocotte-minute",
+    legumes: ["carotte"],
+    personnes: 3,
+    preparation: 20,
+    cuisson: 65,
+    ingredients: [
+      "1 jarret de porc demi-sel (environ 700 g)",
+      "1 chou vert",
+      "Des poireaux (le blanc et le vert)",
+      "Quelques carottes",
+      "1 c. à soupe d'huile",
+      "1 cube de bouillon",
+      "Facultatif : 1 oignon piqué d'un clou de girofle, thym, laurier, poivre en grains",
+      "Pas de sel",
+      "Pour servir : moutarde et cornichons",
+    ],
+    etapes: [
+      "Dessaler : mettre le jarret dans la cocotte, couvrir d'eau froide, porter à ébullition et laisser bouillir une dizaine de minutes. Jeter l'eau (et la mousse grise qui s'est formée).",
+      "Sécher le jarret avec du papier absorbant, puis le faire dorer dans l'huile bien chaude, quelques minutes sur chaque face.",
+      "Déglacer avec un peu d'eau en grattant bien les sucs au fond de la cocotte.",
+      "Couvrir le jarret d'eau (sans dépasser les 2/3 de la cocotte), ajouter le cube de bouillon et les aromates éventuels. Ne pas saler.",
+      "Fermer la cocotte-minute et cuire 40 minutes à partir du sifflement.",
+      "Pendant ce temps, préparer les légumes : couper le chou et retirer le trognon, laver soigneusement les poireaux, couper les blancs en tronçons et émincer finement le vert, éplucher les carottes.",
+      "Décompresser, ouvrir, ajouter le chou, les poireaux (blancs et vert émincé) et les carottes.",
+      "Refermer et cuire encore 8 à 10 minutes à partir du sifflement.",
+      "Servir le jarret avec les légumes, de la moutarde et des cornichons.",
+    ],
+    notes:
+      "Dessaler par une première ébullition évite que le chou et le bouillon soient trop salés ; goûter l'eau après ce premier bouillon pour juger. Le cube de bouillon apporte lui aussi du sel : goûter avant d'en ajouter un deuxième. Le vert des poireaux ne se jette pas : émincé finement, il cuit très bien sous pression et parfume le bouillon. Le chou cuit plus régulièrement en quartiers qu'en moitiés. Garder le bouillon : il fait une très bonne soupe le lendemain.",
+  },
 ];
