@@ -95,7 +95,7 @@ window.RECETTES = [
     legumes: ["pomme-de-terre"],
     personnes: 4,
     preparation: 30,
-    cuisson: 20,
+    cuisson: 30,
     ingredients: [
       "4 à 5 pommes de terre de consommation (environ 800 g)",
       "Huile de friture",
@@ -104,14 +104,14 @@ window.RECETTES = [
     etapes: [
       "Éplucher les pommes de terre (facultatif) et les couper en tranches très fines, environ 2 mm, à la mandoline ou au couteau.",
       "Faire tremper les tranches dans l'eau froide, puis rincer plusieurs fois jusqu'à ce que l'eau reste claire, pour retirer l'amidon.",
-      "Égoutter, puis sécher très soigneusement les tranches dans un torchon propre : l'eau qui reste fait mousser l'huile et ramollit les chips.",
-      "Chauffer l'huile de la friteuse à 160–170 °C. Une seule cuisson suffit, pas de double cuisson comme pour les frites.",
+      "Égoutter les tranches dans une passoire et les laisser s'égoutter un moment. Pas besoin de les sécher au torchon : encore un peu humides, elles ont donné des chips plus croustillantes.",
+      "Chauffer l'huile de la friteuse à 165–170 °C réels (réglage 180 °C sur ma friteuse, vérifié au thermomètre). Une seule cuisson suffit, pas de double cuisson comme pour les frites.",
       "Plonger les tranches par petites quantités, en une seule couche, et remuer pour qu'elles ne collent pas.",
-      "Cuire 5 à 7 minutes, jusqu'à ce qu'elles soient dorées pâle et que les bulles se calment presque.",
+      "Cuire 8 minutes, jusqu'à ce qu'elles soient dorées et que les bulles se calment presque.",
       "Égoutter sur du papier absorbant et saler aussitôt. Elles finissent de croustiller en refroidissant.",
     ],
     notes:
-      "Si les premières restent molles une fois refroidies, laisser les suivantes une minute de plus. Plus l'huile est chaude, plus elles brunissent vite sans croustiller ; plus elle est froide, plus elles boivent l'huile. Des tranches plus fines (1 à 1,5 mm) cuisent plus vite et donnent des chips plus légères. Mes essais (tranches de 2 mm, friteuse) : 170 °C pendant 6 minutes, chips un peu molles même refroidies ; essai suivant à 170 °C pendant 7 minutes. Ma friteuse chauffe moins que ce qu'elle affiche : réglée sur 180 °C, l'huile mesurée au thermomètre est à 165 °C (et à 140 °C pour un réglage à 170 °C). Vérifier la température réelle au thermomètre, avant de plonger les chips.",
+      "Si les premières restent molles une fois refroidies, laisser les suivantes une minute de plus. Plus l'huile est chaude, plus elles brunissent vite sans croustiller ; plus elle est froide, plus elles boivent l'huile. Des tranches plus fines (1 à 1,5 mm) cuisent plus vite et donnent des chips plus légères. Mes essais (tranches de 2 mm, friteuse) : réglage 170 °C pendant 6 minutes, chips un peu molles même refroidies. Le bon résultat : réglage 180 °C, 8 minutes, tranches simplement égouttées à la passoire, plus croustillantes que celles séchées au torchon. Ma friteuse chauffe moins que ce qu'elle affiche : réglée sur 180 °C, l'huile mesurée au thermomètre est à 165 °C (et à 140 °C pour un réglage à 170 °C). Vérifier la température réelle au thermomètre, avant de plonger les chips.",
   },
   {
     id: "jarret-demi-sel-chou-poireaux-cocotte",
