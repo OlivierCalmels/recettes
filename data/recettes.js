@@ -111,7 +111,7 @@ window.RECETTES = [
       "Égoutter sur du papier absorbant et saler aussitôt. Elles finissent de croustiller en refroidissant.",
     ],
     notes:
-      "Si les premières restent molles une fois refroidies, laisser les suivantes une minute de plus. Plus l'huile est chaude, plus elles brunissent vite sans croustiller ; plus elle est froide, plus elles boivent l'huile. Des tranches plus fines (1 à 1,5 mm) cuisent plus vite et donnent des chips plus légères.",
+      "Si les premières restent molles une fois refroidies, laisser les suivantes une minute de plus. Plus l'huile est chaude, plus elles brunissent vite sans croustiller ; plus elle est froide, plus elles boivent l'huile. Des tranches plus fines (1 à 1,5 mm) cuisent plus vite et donnent des chips plus légères. Mes essais (tranches de 2 mm, friteuse) : 170 °C pendant 6 minutes, chips un peu molles même refroidies ; essai suivant à 170 °C pendant 7 minutes.",
   },
   {
     id: "jarret-demi-sel-chou-poireaux-cocotte",
