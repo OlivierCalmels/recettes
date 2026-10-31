@@ -89,4 +89,28 @@ window.RECETTES = [
     notes:
       "Deux versions au choix pour l'appareil : la version tomate (concentré de tomate dans la ricotta) ou la version carotte et champignons. On peut aussi la faire nature, avec juste la ricotta et les courgettes.",
   },
+  {
+    id: "chips-maison-friteuse",
+    titre: "Chips maison à la friteuse",
+    legumes: ["pomme-de-terre"],
+    personnes: 4,
+    preparation: 30,
+    cuisson: 20,
+    ingredients: [
+      "4 à 5 pommes de terre de consommation (environ 800 g)",
+      "Huile de friture",
+      "Sel fin",
+    ],
+    etapes: [
+      "Éplucher les pommes de terre (facultatif) et les couper en tranches très fines, environ 2 mm, à la mandoline ou au couteau.",
+      "Faire tremper les tranches dans l'eau froide, puis rincer plusieurs fois jusqu'à ce que l'eau reste claire, pour retirer l'amidon.",
+      "Égoutter, puis sécher très soigneusement les tranches dans un torchon propre : l'eau qui reste fait mousser l'huile et ramollit les chips.",
+      "Chauffer l'huile de la friteuse à 160–170 °C. Une seule cuisson suffit, pas de double cuisson comme pour les frites.",
+      "Plonger les tranches par petites quantités, en une seule couche, et remuer pour qu'elles ne collent pas.",
+      "Cuire 5 à 7 minutes, jusqu'à ce qu'elles soient dorées pâle et que les bulles se calment presque.",
+      "Égoutter sur du papier absorbant et saler aussitôt. Elles finissent de croustiller en refroidissant.",
+    ],
+    notes:
+      "Si les premières restent molles une fois refroidies, laisser les suivantes une minute de plus. Plus l'huile est chaude, plus elles brunissent vite sans croustiller ; plus elle est froide, plus elles boivent l'huile. Des tranches plus fines (1 à 1,5 mm) cuisent plus vite et donnent des chips plus légères.",
+  },
 ];
