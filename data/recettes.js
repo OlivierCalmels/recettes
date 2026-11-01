@@ -122,6 +122,10 @@ window.RECETTES = [
   {
     id: "jarret-demi-sel-chou-poireaux-cocotte",
     titre: "Jarret de porc demi-sel, chou et poireaux à la cocotte-minute",
+    photo: "images/jarret-cocotte.jpg",
+    photos: [
+      { src: "images/jarret-legumes-prepares.jpg", legende: "Les légumes prêts : blancs et vert de poireaux émincés, carottes épluchées, chou en dessous." },
+    ],
     legumes: ["carotte"],
     personnes: 3,
     preparation: 20,
