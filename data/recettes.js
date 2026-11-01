@@ -9,7 +9,8 @@
 //   ingredients: ["600 g de carottes", "30 g de beurre"],
 //   etapes: ["Éplucher les carottes…", "…"],
 //   notes: "Facultatif",
-//   photo: "images/mon-plat.jpg"   // facultatif, photo dans le dossier images/
+//   photo: "images/mon-plat.jpg",  // facultatif, photo dans le dossier images/
+//   photos: [{ src: "images/etape.jpg", legende: "…" }]  // facultatif, photos en plus, en bas de la recette
 // }
 window.RECETTES = [
   {
@@ -92,6 +93,11 @@ window.RECETTES = [
   {
     id: "chips-maison-friteuse",
     titre: "Chips maison à la friteuse",
+    photo: "images/chips-maison.jpg",
+    photos: [
+      { src: "images/chips-maison-egouttage.jpg", legende: "Les tranches rincées, égouttées dans la passoire : c'est comme ça qu'elles ont donné les chips les plus croustillantes." },
+      { src: "images/chips-maison-torchon.jpg", legende: "Le premier essai, tranches séchées au torchon : finalement moins croustillantes." },
+    ],
     legumes: ["pomme-de-terre"],
     personnes: 4,
     preparation: 30,

@@ -96,7 +96,8 @@
       <ul class="plain">${(r.ingredients || []).map((i) => `<li>${esc(i)}</li>`).join("")}</ul>
       <h2>Étapes</h2>
       <ol>${(r.etapes || []).map((e) => `<li>${esc(e)}</li>`).join("")}</ol>
-      ${r.notes ? `<h2>Notes</h2><p>${esc(r.notes)}</p>` : ""}`;
+      ${r.notes ? `<h2>Notes</h2><p>${esc(r.notes)}</p>` : ""}
+      ${(r.photos || []).length ? `<h2>Photos</h2>${r.photos.map((p) => `<figure class="galerie"><img class="photo" src="${esc(p.src)}" alt="${esc(p.legende || r.titre)}" loading="lazy">${p.legende ? `<figcaption class="muted">${esc(p.legende)}</figcaption>` : ""}</figure>`).join("")}` : ""}`;
     document.getElementById("partager").addEventListener("click", () => {
       qrOuvertIci = true;
       aller(`#/recette/${encodeURIComponent(r.id)}/qr`);

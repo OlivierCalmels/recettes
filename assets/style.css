@@ -123,5 +123,7 @@ ol li, ul.plain li { margin-bottom: .35rem; }
 
 /* Photos de recettes */
 .photo { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; margin: .5rem 0 1rem; }
+.galerie { margin: 0 0 1rem; }
+.galerie .photo { margin-bottom: .3rem; }
 .card.avec-photo { display: flex; gap: .8rem; align-items: center; padding: .6rem; }
 .card .vignette { width: 72px; height: 72px; flex: 0 0 72px; object-fit: cover; border-radius: 10px; }
